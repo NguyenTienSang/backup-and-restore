@@ -1,0 +1,5 @@
+select database_name,backup_set_id,position,recovery_model from msdb.dbo.backupset
+
+RESTORE DATABASE QLThuVien WITH RECOVERY
+
+EXEC msdb.dbo.sp_delete_database_backuphistory @database_name = 'QLThuVien';
